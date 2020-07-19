@@ -21,8 +21,7 @@ Options:
   -V, --version   output the version number
   -d, --dump      Write all globally installed node_modules into a *yarnFile* file.
   -D, --describe  dump adds a description comment above each line, unless the dependency does not have a description.
-  -i, --install   WIP: Install all dependencies from the *yarnFile* file
-  -f, --file      WIP: Read the *yarnFile* file from this location.
+  -i, --install   Install all dependencies from the *yarnFile* file
   -h, --help      display help for command
 ```
 
