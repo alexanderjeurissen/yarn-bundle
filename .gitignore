@@ -56,3 +56,4 @@ public_
 bin/pretty
 
 Procfile.local
+yarnFile

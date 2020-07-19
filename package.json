@@ -2,8 +2,9 @@
   "name": "@alexanderjeurissen/yarn-bundle",
   "version": "0.0.1",
   "description": "Bundler for global yarn packages",
-  "bin": "./dist/yarn_bundle.js",
-  "types": "./dist/yarn_bundle.d.ts",
+  "main": "./dist/index.js",
+  "bin": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "repository": "git@github.com:alexanderjeurissen/yarn-bundle.git",
   "author": "Alexander Jeurissen <1220084+alexanderjeurissen@users.noreply.github.com>",
   "license": "MIT",
@@ -20,6 +21,7 @@
     "dist/**/*"
   ],
   "scripts": {
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts -- -d",
     "build": "tsc --listFiles --newline lf",
     "build:dev": "tsc -w --newline lf",
     "preversion": "rm -rf dist/* && yarn build",
@@ -53,6 +55,7 @@
     "eslint": "^7.5.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.5"
