@@ -3,7 +3,7 @@
 Bundler for global yarn packages.
 Heavily inspired by [HomeBrew bundle](https://github.com/Homebrew/homebrew-bundle).
 
-![image](public/assets/yarn_bundle.png)
+![image](public/assets/yarn_bundle_dump.png)
 
 ### Options
 
