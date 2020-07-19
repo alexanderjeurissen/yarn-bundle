@@ -1,53 +1,36 @@
 # CLI to rename a npm package 
 @tiaanduplessis/pkg-rename@1.0.1
-
 # Makes eslint the fastest linter on the planet 
 eslint_d@9.1.1
-
 # Parallelized eslint 
 esprint@0.7.0
-
 # The command-line tool for creating and publishing Expo apps 
 expo-cli@3.21.5
-
 # Gatsby command-line interface for creating new sites and running Gatsby commands 
 gatsby-cli@2.12.50
-
 # Create a merge request from command line in gitlab 
 git-lab-cli@2.0.7
-
 # Simple and convenient Git tool to easily recall what you've done 
 git-recall@1.2.4
-
 # Command line tool for common GraphQL development workflows 
 graphql-cli@4.0.0
-
 # A tool for creating and developing Ionic Framework mobile apps. 
 ionic@5.4.16
-
 # A toolkit for JavaScript codemods 
 jscodeshift@0.10.0
-
 # Simple proxy to bypass CORS issues. This was built as a local dev only solution to enable prototyping against existing APIs without having to worry about CORS. 
 local-cors-proxy@1.1.0
-
 # Node.js native addon build tool 
 node-gyp@7.0.0
-
 # CLI for PostCSS 
 postcss-cli@7.1.1
-
 # Use react-devtools outside of the browser 
 react-devtools@4.7.0
-
 # A framework for building native apps using React 
 react-native@0.62.2
-
 # A transform module to make vim support RPC request as neovim 
 vim-node-rpc@0.1.34
-
 # Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff. 
 webpack@4.43.0
-
 # CLI for webpack & friends 
 webpack-cli@3.3.12
