@@ -26,11 +26,7 @@ program
     "-D, --describe",
     "dump adds a description comment above each line, unless the dependency does not have a description."
   )
-  .option(
-    "-i, --install",
-    "WIP: Install all dependencies from the *Yarnfile* file"
-  )
-  .option("-f, --file", "WIP: Read the *Yarnfile* file from this location.")
+  .option("-i, --install", "Install all dependencies from the *Yarnfile* file")
   .parse(process.argv);
 
 const Dump = async (options: ObjType) => {
