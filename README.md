@@ -31,4 +31,4 @@ Options:
 Several example *yarnFile* can be found in the public/assets folder:
 
 - [yarnFile](public/assets/example_yarn_file) without descriptions (default)
-- [yarnFile](public/assets/example_yarn_file) with descriptions (using --describe option)
+- [yarnFile](public/assets/example_yarn_file_with_describe) with descriptions (using --describe option)
