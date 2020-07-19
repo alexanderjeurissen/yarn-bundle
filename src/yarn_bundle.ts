@@ -60,6 +60,7 @@ const DumpGlobalNodeModules = async (options: ObjType) => {
     .map(({ name, version, description }) => {
       if (description) console.log(chalk.greenBright(`# ${description}`));
       console.log(chalk.blue(name) + "@" + chalk.green(version));
+      if (description) console.log("");
 
       return `${description ? `# ${description} \n` : ""}${name}@${version}`;
     })
