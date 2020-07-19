@@ -1,6 +1,6 @@
 {
   "name": "@alexanderjeurissen/yarn-bundle",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Bundler for global yarn packages",
   "main": "./dist/yarn_bundle.js",
   "bin": "./dist/yarn_bundle.js",
