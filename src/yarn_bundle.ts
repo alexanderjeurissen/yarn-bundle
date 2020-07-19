@@ -3,15 +3,11 @@
 import chalk from "chalk";
 import clear from "clear";
 import figlet from "figlet";
-import path from "path";
 import program from "commander";
 import { writeFile } from "fs";
-import {
-  fetchGlobalNodeModules,
-  fetchPackageInfo,
-  getPackageDetails,
-} from "./util";
+import { fetchGlobalNodeModules, getPackageDetails, execAsync } from "./util";
 import { ObjType } from "./types";
+const lineReader = require("line-reader"); // eslint-disable-line @typescript-eslint/no-var-requires
 
 clear();
 console.log(
@@ -24,7 +20,7 @@ program
   .description("A CLI for bundling global node modules")
   .option(
     "-d, --dump",
-    "Write all globally installed node_modules into a *yarnFile* file."
+    "Write all globally installed node_modules into a *Yarnfile* file."
   )
   .option(
     "-D, --describe",
@@ -32,17 +28,13 @@ program
   )
   .option(
     "-i, --install",
-    "WIP: Install all dependencies from the *yarnFile* file"
+    "WIP: Install all dependencies from the *Yarnfile* file"
   )
-  .option("-f, --file", "WIP: Read the *yarnFile* file from this location.")
+  .option("-f, --file", "WIP: Read the *Yarnfile* file from this location.")
   .parse(process.argv);
 
-const DumpGlobalNodeModules = async (options: ObjType) => {
-  const {
-    entries,
-    infoEntries,
-    listEntries,
-  }: ObjType = await fetchGlobalNodeModules();
+const Dump = async (options: ObjType) => {
+  const { infoEntries }: ObjType = await fetchGlobalNodeModules();
 
   console.log(
     chalk.yellow(
@@ -58,27 +50,48 @@ const DumpGlobalNodeModules = async (options: ObjType) => {
 
   const data = nodePackages
     .map(({ name, version, description }) => {
-      if (description) console.log(chalk.greenBright(`# ${description}`));
       console.log(chalk.blue(name) + "@" + chalk.green(version));
-      if (description) console.log("");
-
       return `${description ? `# ${description} \n` : ""}${name}@${version}`;
     })
-    .join("\n\n");
+    .join("\n");
 
-  writeFile("yarnFile", data, (err) => {
+  writeFile("Yarnfile", data, (err: any) => {
     if (err) {
       console.error(chalk.red(err));
       return;
     }
 
     console.log(
-      chalk.bgGreen(chalk.black("entries successfully written to ./yarnFile"))
+      chalk.bgGreen(chalk.black("entries in Yarnfile successfully installed"))
     );
   });
 };
 
+const Install = async (options: ObjType) => {
+  lineReader.eachLine(
+    "Yarnfile",
+    async (line: any) => {
+      if (line[0] !== "#") {
+        const [, name, version] = line.match("(.*)@(.*)");
+        console.log(
+          "* installing " + chalk.blue(name) + "@" + chalk.green(version)
+        );
+
+        await execAsync(`yarn global add ${line}`);
+      }
+    },
+    (err: Error) => {
+      if (err) throw err;
+      console.log(
+        chalk.bgGreen(chalk.black("entries successfully written to ./Yarnfile"))
+      );
+    }
+  );
+};
+
 // NOTE: dump global installed node packages to yarn_bundle
 if (program.dump) {
-  DumpGlobalNodeModules(program);
+  Dump(program);
+} else if (program.install) {
+  Install(program);
 }
