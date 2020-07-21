@@ -34,8 +34,14 @@
   },
   "keywords": [
     "yarn",
+    "yarn-bundle",
+    "node",
     "bundle",
-    "global"
+    "global",
+    "yarnglobal",
+    "node-module",
+    "node-modules",
+    "yarnpkg"
   ],
   "dependencies": {
     "chalk": "^4.1.0",
