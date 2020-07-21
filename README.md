@@ -3,14 +3,14 @@
 Bundler for global yarn packages.
 Heavily inspired by [HomeBrew bundle](https://github.com/Homebrew/homebrew-bundle).
 
-![image](public/assets/yarn_bundle_dump.png)
+![image](https://github.com/alexanderjeurissen/yarn-bundle/blob/main/public/assets/yarn_bundle_dump.png)
 
 ### Options
 
 *yarn-bundle* comes with a `--help` command to list all the CLI options that can be passed.
 The options that *yarn-bundle* accepts are very similar to *homebrew-bundle*
 
-![image](public/assets/yarn_bundle_help.png)
+![image](https://github.com/alexanderjeurissen/yarn-bundle/blob/main/public/assets/yarn_bundle_help.png)
 
 ```conf
 Usage: yarn_bundle [options]
@@ -29,5 +29,5 @@ Options:
 
 Several example *yarnFile* can be found in the public/assets folder:
 
-- [yarnFile](public/assets/example_yarn_file) without descriptions (default)
-- [yarnFile](public/assets/example_yarn_file_with_describe) with descriptions (using --describe option)
+- [yarnFile](https://github.com/alexanderjeurissen/yarn-bundle/blob/main/public/assets/example_yarn_file) without descriptions (default)
+- [yarnFile](https://github.com/alexanderjeurissen/yarn-bundle/blob/main/public/assets/example_yarn_file_with_describe) with descriptions (using --describe option)
